@@ -3,7 +3,6 @@
 # =================================================
 # Disciplina : Programação de Sistemas (PS)
 # Aula       : 05: Revisão: Estruturas de Dados (Listas e Dicionários)
-
 # Autor      : Cauã Borcezi Ferreira
 # Data       : 03/03/2026
 # Repositório: https://github.com/cborcezi/2026-PS

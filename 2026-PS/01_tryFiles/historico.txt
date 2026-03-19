@@ -1,0 +1,11 @@
+19/03/2026 19:19 - EMPRÉSTIMO: O Programador Pragmático
+19/03/2026 19:19 - DEVOLUÇÃO: O Programador Pragmático
+19/03/2026 16:30 - EMPRÉSTIMO: O Programador Pragmático
+19/03/2026 16:32 - DEVOLUÇÃO: O Programador Pragmático
+19/03/2026 16:39 - CADASTRO: Dom Casmurro | Machado de Assis
+19/03/2026 16:40 - EMPRÉSTIMO: Dom Casmurro
+19/03/2026 16:40 - DEVOLUÇÃO: Dom Casmurro
+19/03/2026 16:41 - EMPRÉSTIMO: Dom Casmurro
+19/03/2026 16:41 - DEVOLUÇÃO: Dom Casmurro
+19/03/2026 16:41 - EMPRÉSTIMO: Dom Casmurro
+19/03/2026 16:41 - DEVOLUÇÃO: Dom Casmurro

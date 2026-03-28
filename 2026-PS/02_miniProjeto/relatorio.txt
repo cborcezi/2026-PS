@@ -1,0 +1,6 @@
+Relatório Estatístico do Estoque
+Total de itens em estoque: 730
+Valor total do estoque: R$ 6276.47
+Preço médio por item: R$ 8.60
+Maior preço: R$ 29.99
+Menor preço: R$ 0.80

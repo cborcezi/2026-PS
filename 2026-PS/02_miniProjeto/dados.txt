@@ -1,0 +1,55 @@
+Bebidas;Refrigerante de Cola;7.99;15
+Bebidas;Refrigerante de Guaraná;6.99;17
+Bebidas;Refrigerante de Laranja;6.99;12
+Bebidas;Refrigerante de Limão;6.99;17
+Bebidas;Refrigerante de Uva;6.99;11
+Bebidas;Suco de Laranja;5.49;14
+Bebidas;Suco de Limão;5.49;19
+Bebidas;Suco de Maçã;5.99;11
+Bebidas;Suco de Manga;5.49;10
+Bebidas;Suco de Maracujá;5.99;15
+Bebidas;Suco de Pêssego;5.99;18
+Bebidas;Suco de Uva;5.99;12
+
+Carnes;Carne Bovina;29.99;13
+Carnes;Carne de Frango;14.99;20
+Carnes;Carne de Porco;18.99;16
+Carnes;Linguiça Suína;17.99;11
+
+Congelados;Batata Frita;9.99;18
+Congelados;Empanados de Frango;13.99;14
+Congelados;Hambúrguer;12.99;14
+Congelados;Lasanha;15.99;17
+Congelados;Pizza;19.99;11
+
+Hortifruti;Alface;2.99;13
+Hortifruti;Banana;4.99;19
+Hortifruti;Brócolis;6.99;11
+Hortifruti;Couve Flor;6.99;16
+Hortifruti;Kiwi;7.99;10
+Hortifruti;Laranja;3.99;18
+Hortifruti;Limão;3.49;14
+Hortifruti;Maçã;5.99;16
+Hortifruti;Manga;6.49;12
+Hortifruti;Maracujá;7.49;15
+Hortifruti;Morango;8.99;11
+Hortifruti;Pepino;3.99;16
+Hortifruti;Pêssego;7.99;13
+Hortifruti;Repolho;4.49;19
+Hortifruti;Tomate;5.49;14
+Hortifruti;Uva;8.49;11
+
+Limpeza;Amaciante;11.99;15
+Limpeza;Desengordurante;9.99;13
+Limpeza;Detergente;3.49;18
+Limpeza;Esponja de Louça;2.49;20
+Limpeza;Sabão em Pó;14.99;16
+
+Padaria;Bolo de Cenoura;12.99;13
+Padaria;Bolo de Chocolate;13.99;17
+Padaria;Bolo de Laranja;12.49;11
+Padaria;Pão de Hambúrguer;1.0;7
+Padaria;Pão de Queijo;8.99;17
+Padaria;Pão Francês;0.8;20
+Padaria;Pão Fatiado;7.49;14
+Padaria;Pão Integral;7.99;16

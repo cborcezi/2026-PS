@@ -1,5 +1,5 @@
 Acompanhamentos;Chicken IFNuggets;15.0;19
-Acompanhamentos;IFFritas;8.0;25
+Acompanhamentos;IFFritas;8.0;24
 Acompanhamentos;Onion Rings;10.0;20
 Acompanhamentos;Piscininha de cheddar;12.0;30
 Acompanhamentos;Salada Mix Crispy Chicken;14.0;18
@@ -17,7 +17,7 @@ Lanches;Big IF;20.0;18
 Lanches;Duplo Cheddar IFMelt;25.0;20
 Lanches;Duplo Chicken Cheddar Melt;29.0;15
 Lanches;Duplo Quarterão;28.0;20
-Lanches;IFChicken Duplo;27.0;19
+Lanches;IFChicken Duplo;27.0;18
 Lanches;Mc Lanche IF-eliz;22.0;25
 Lanches;Tasty Turbo 2 carnes;30.0;15
 Sobremesas;Casquinha Baunilha;4.0;30

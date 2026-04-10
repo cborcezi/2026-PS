@@ -1,0 +1,5 @@
+[10/04/2026 01:23] Compra realizada
+Método: Dinheiro
+Total: R$ 35.00
+Produtos: IFFritas, IFChicken Duplo
+-------------------------

@@ -1,7 +1,7 @@
 Relatório Estatístico do Estoque
-Itens: 1078
-Valor total: R$ 9631.00
-Média: R$ 8.93
+Itens: 1075
+Valor total: R$ 9576.00
+Média: R$ 8.91
 Maior: R$ 30.00
 Menor: R$ 3.00
 -------------------------

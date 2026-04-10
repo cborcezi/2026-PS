@@ -4,7 +4,7 @@
 # Disciplina : Programação de Sistemas (PS)
 # Aula       : 12 e 13 - Mini Projeto
 # Autor      : Átila, Cauã e Gabriele
-# Data       : 07/04/2026
+# Data       : 09/04/2026
 # Descrição  : Sistema de lanchonete que lê o cardápio de um arquivo, permite buscar
 #              produtos, realizar compras com atualização de estoque e registra as
 #              vendas e relatórios em arquivos .txt.

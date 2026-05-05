@@ -1,24 +1,24 @@
-Acompanhamentos;Chicken IFNuggets;15.0;19
+Acompanhamentos;Chicken IFNuggets;15.0;16
 Acompanhamentos;IFFritas;8.0;24
 Acompanhamentos;Onion Rings;10.0;20
 Acompanhamentos;Piscininha de cheddar;12.0;30
-Acompanhamentos;Salada Mix Crispy Chicken;14.0;18
-Bebidas;Água Gaseificada;3.5;40
-Bebidas;Água Mineral;3.0;40
+Acompanhamentos;Salada Mix Crispy Chicken;14.0;17
+Bebidas;Água Gaseificada;3.5;39
+Bebidas;Água Mineral;3.0;39
 Bebidas;Coca-Cola Zero Açúcar;5.5;48
 Bebidas;Del Valle de Laranja;5.0;50
 Bebidas;Del Valle de Uva;5.0;50
 Bebidas;Fanta Guaraná;5.0;50
 Bebidas;Fanta Laranja;5.0;49
 Bebidas;Fanta Uva;5.0;50
-Bebidas;Red Bull;8.0;30
+Bebidas;Red Bull;8.0;29
 Bebidas;Sprite;5.0;50
-Lanches;Big IF;20.0;18
+Lanches;Big IF;20.0;17
 Lanches;Duplo Cheddar IFMelt;25.0;20
-Lanches;Duplo Chicken Cheddar Melt;29.0;15
+Lanches;Duplo Chicken Cheddar Melt;29.0;14
 Lanches;Duplo Quarterão;28.0;20
 Lanches;IFChicken Duplo;27.0;18
-Lanches;Mc Lanche IF-eliz;22.0;25
+Lanches;Mc Lanche IF-eliz;22.0;24
 Lanches;Tasty Turbo 2 carnes;30.0;15
 Sobremesas;Casquinha Baunilha;4.0;30
 Sobremesas;Casquinha Chocolate;4.0;30
@@ -27,7 +27,7 @@ Sobremesas;IFColosso Ovomaltine Rocks;9.0;30
 Sobremesas;IFFlurry M&M's;9.0;20
 Sobremesas;IFFlurry Ovomaltine Rocks;9.0;20
 Sobremesas;IFFlurry Trufa Língua de Gato;9.0;20
-Sobremesas;IFShake Kopenhagen;10.0;19
+Sobremesas;IFShake Kopenhagen;10.0;18
 Sobremesas;IFShake Morango;8.0;25
 Sobremesas;IFShake Ovomaltine;8.0;25
 Sobremesas;Sundae Morango;7.0;30

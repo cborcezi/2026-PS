@@ -1,0 +1,3 @@
+Cacau;Cachorro;8;Shih Tzu;8.25;Pequeno;Valdirene;True;False
+Estreça;0;0;0;0.0;0;0;False;False
+Estrela;Gato;5;Persa;4.8;Pequeno;Amanda;True;False

@@ -1,0 +1,35 @@
+[
+    {
+        "nome": "Horus",
+        "especie": "Cachorro",
+        "idade": 5,
+        "peso": 27.0,
+        "nome_dono": "Bruna",
+        "vacinado": true,
+        "hospedado": false,
+        "altura": "0,63",
+        "data_nascimento": "04/05/2021"
+    },
+    {
+        "nome": "Cacau",
+        "especie": "Cachorro",
+        "idade": 8,
+        "peso": 7.4,
+        "nome_dono": "Valdirene",
+        "vacinado": true,
+        "hospedado": false,
+        "altura": "0,27",
+        "data_nascimento": "04/05/2018"
+    },
+    {
+        "nome": "Estrela",
+        "especie": "Gato",
+        "idade": 3,
+        "peso": 4.0,
+        "nome_dono": "Vanussa",
+        "vacinado": true,
+        "hospedado": false,
+        "altura": "0,25",
+        "data_nascimento": "25/01/23"
+    }
+]

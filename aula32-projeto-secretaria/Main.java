@@ -31,7 +31,7 @@ public class Main{
             String opcao = teclado.nextLine().trim();
 
             if (opcao.equals("0")) {
-                System.out.println("Secretaria fechada. Ate a proxima!");
+                System.out.println("Atendimento encerrado. A secretaria agradece sua visita. Até a próxima!");
                 break;
             } else if (opcao.equals("1")) {
                 cadastrar(lista, teclado);
@@ -60,7 +60,7 @@ public class Main{
 
         Aluno existente = buscarPorMatricula(lista, matricula);
         if (existente != null) {
-            System.out.println("Ja existe ficha com a matricula " + matricula + "!");
+            System.out.println("Cadastro invalido. A matricula " + matricula + " ja existe!");
             return;
         }
 
@@ -73,15 +73,15 @@ public class Main{
         Aluno novoAluno = new Aluno(nome, matricula, curso, email);
         lista.add(novoAluno);
 
-        System.out.println("Ficha de " + novoAluno.getNome() + " arquivada!");
+        System.out.println("Cadastro de " + novoAluno.getNome() + " realizado com sucesso!");
     }
 
     static void listar(ArrayList<Aluno> lista){
         if (lista.size() == 0) {
-        System.out.println("Nenhuma ficha no gaveteiro ainda.");
+        System.out.println("Nenhuma ficha encontrada no sistema!");
         return;
         }
-        System.out.println("--- FICHAS NO GAVETEIRO: " + lista.size() + " ---");
+        System.out.println("--- FICHAS NO SISTEMA: " + lista.size() + " ---");
         for (int i = 0; i < lista.size(); i++) {
             Aluno a = lista.get(i);
             System.out.println(a);
@@ -105,23 +105,23 @@ public class Main{
         Aluno a = buscarPorMatricula(lista, matricula);
 
         if(a == null) {
-            System.out.println("Nenhuma ficha com a matrícula " + matricula + ".");
+            System.out.println("Nenhuma ficha encontrada para a matricula " + matricula + "!");
         }else {
-            System.out.println("Achei: " + a);
+            System.out.println("Ficha encontrada: " + a);
 
         }
     }
 
     static void atualizar(ArrayList<Aluno> lista, Scanner teclado) {
-        System.out.print("Matrícula da ficha a atualizar: ");
+        System.out.print("Matricula a ser atualizada: ");
         String matricula = teclado.nextLine().trim();
         Aluno a = buscarPorMatricula(lista, matricula);
         
         if (a == null) {
-            System.out.println("Nenhuma ficha com a matrícula " + matricula + ".");
+            System.out.println("Nenhuma ficha encontrada para a matricula " + matricula + "!");
             return;
         }
-        System.out.print("Novo curso de " + a.getNome() + ": ");
+        System.out.print("Informe o novo curso de " + a.getNome() + ": ");
         String novoCurso = teclado.nextLine().trim();
         
         a.setCurso(novoCurso);
@@ -129,26 +129,26 @@ public class Main{
     }
 
     static void remover (ArrayList<Aluno> lista, Scanner teclado) {
-        System.out.print("Matrícula da ficha a remover: ");
+        System.out.print("Numero da matricula que deseja remover: ");
         String matricula = teclado.nextLine().trim();
         Aluno a = buscarPorMatricula(lista, matricula);
         if (a == null) {
-            System.out.println("Nenhuma ficha com a matricula " + matricula + ".");
+            System.out.println("Nenhuma ficha encontrada para a matricula " + matricula + ".");
             return;
         }
-        System.out.print("Tem certeza que remove " + a.getNome() + "? (s/n): ");
+        System.out.print("Tem certeza que deseja remover a ficha de  " + a.getNome() + "? (sim/nao): ");
         String resposta = teclado.nextLine().trim();
-        if (resposta.equals("s")) {
+        if (resposta.equals("sim")) {
             lista.remove(a);
-            System.out.println("Ficha removida.");
+            System.out.println("Ficha de " +a.getNome() + " removida com sucesso!");
         } else {
-            System.out.println("Remocao cancelada.");
+            System.out.println("A remocao foi cancelada!");
         }
     }
     static void relatorio(ArrayList<Aluno> lista, Scanner teclado) {
         System.out.println("--- RELATORIO DA SECRETARIA ---");
         System.out.println("Total de fichas: " + lista.size());
-        System.out.print("Contar alunos de qual curso? ");
+        System.out.print("Informe o curso para consultar a quantidade de alunos: ");
         String curso = teclado.nextLine().trim();
 
         int contador = 0;
@@ -158,6 +158,6 @@ public class Main{
                 contador = contador + 1;
             }
         }
-        System.out.println("Alunos de " + curso + ": " + contador);
+        System.out.println("Total de alunos no curso de " + curso + ": " + contador);
     }
 }

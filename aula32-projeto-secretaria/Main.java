@@ -17,9 +17,9 @@ public class Main{
         ArrayList<Aluno> lista = new ArrayList<Aluno>();
 
         while(true){
-            System.out.println("==========================================");
-            System.out.println("          SECRETARIA DO BORCEZI");
-            System.out.println("==========================================");
+            System.out.println("==========================================================");
+            System.out.println("     SECRETARIA DO CAMPUS - por Cauã Borcezi Ferreira");
+            System.out.println("==========================================================");
             System.out.println("[1] Cadastrar aluno");
             System.out.println("[2] Listar alunos");
             System.out.println("[3] Buscar por matrícula");

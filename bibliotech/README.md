@@ -36,3 +36,13 @@ Sistema de emprestimo de livros para a biblioteca do campus.
 |---|---|
 | RNF01 | A consulta de disponibilidade deve responder em menos de 3 segundos. |
 | RNF02 | Somente usuarios identificados como bibliotecarios podem alterar o acervo. |
+
+## 4. Diagramas (feitos em APS)
+​
+### Casos de uso
+​
+![Diagrama de casos de uso do BiblioTech](docs/casos-de-uso.svg)
+​
+### Classes
+​
+![Diagrama de classes do BiblioTech](docs/classes.svg)

@@ -49,10 +49,17 @@ public class Biblioteca {
     public boolean emprestar(String titulo, String matricula) {
         Livro livro = buscarLivro(titulo);
         Leitor leitor = buscarLeitor(matricula);
+
         if (livro == null || leitor == null) {
             return false;
         }
+
         Emprestimo novo = new Emprestimo(livro, leitor);
+
+        if (!novo.realizarEmprestimo()) {
+            return false;
+        }
+
         emprestimos.add(novo);
         return true;
     }
@@ -68,8 +75,22 @@ public class Biblioteca {
     }
 
     public void listarEmprestimos() {
-        for (int i=0;i < emprestimos.size(); i++) {
+        for (int i = 0; i < emprestimos.size(); i++) {
             System.out.println(emprestimos.get(i));
         }
+    }
+
+    public String obterAcervoComoTexto() {
+        if (livros.isEmpty()) {
+            return "Nenhum livro cadastrado.";
+        }
+
+        String texto = "";
+
+        for (int i = 0; i < livros.size(); i++) {
+            texto = texto + livros.get(i) + "\n";
+        }
+
+        return texto;
     }
 }

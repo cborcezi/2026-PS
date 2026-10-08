@@ -16,6 +16,8 @@ public class TesteBiblioteca {
 
         System.out.println("Pedro pega Dom Casmurro: "
             + biblioteca.emprestar("Dom Casmurro", "2026010"));
+        System.out.println("Ana tenta o mesmo livro: "
+            + biblioteca.emprestar("Dom Casmurro", "2026011"));
         System.out.println("Pedro acima do limite: "
             + biblioteca.emprestar("Capitaes da Areia", "2026010"));
         System.out.println("Livro que não existe: "

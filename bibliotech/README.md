@@ -82,3 +82,34 @@ java TelaBiblioteca
 - Cadastrar livro e leitor pela janela: hoje o cadastro esta no `main` de `TelaBiblioteca`.
 - Guardar os dados: ao fechar o programa, os emprestimos se perdem.
 - Reservar livros: o sistema ainda não permite que o leitor reserve um livro que esteja emprestado.
+
+## 9. Persistência de Dados
+O sistema utiliza o **MariaDB** para armazenar os dados dos livros no banco `bibliotech`.
+
+- `Conexao.java`: realiza a conexão com o banco de dados.
+- `LivroDAO.java`: implementa os métodos para adicionar, atualizar e excluir livros.
+- `TesteConexao.java`: testa a conexão com o banco.
+- `TesteLivroDAO.java`: testa a inserção, atualização e exclusão de um livro pelo ID.
+
+### Como executar
+
+Configure as variáveis de ambiente `DB_USER` e `DB_PASSWORD`, utilizadas para acessar o banco:
+
+```bash
+export DB_USER="seu_usuario"
+export DB_PASSWORD="sua_senha"
+```
+
+Na pasta `bibliotech`, execute:
+
+```bash
+javac -cp "./lib/*" Conexao.java LivroDAO.java TesteConexao.java TesteLivroDAO.java
+java -cp ".:./lib/*" TesteConexao
+java -cp ".:./lib/*" TesteLivroDAO
+```### Como executar
+
+Configure as variáveis de ambiente `DB_USER` e `DB_PASSWORD`, utilizadas para acessar o banco:
+
+```bash
+export DB_USER="seu_usuario"
+export DB_PASSWORD="sua_senha"

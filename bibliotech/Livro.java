@@ -1,21 +1,39 @@
 /*
 * Disciplina: 2026-PS
 * Projeto   : bibliotech
-* Arquivo   : Livro.java 
+* Arquivo   : Livro.java
 * Autor     : Cauã Borcezi Ferreira
 * Descricao : a caixa "Livro" do diagrama de classes, em Java (Aula 37).
 */
 public class Livro {
+    private int id;
     private String titulo;
     private String autor;
     private int ano;
-    private boolean disponivel;  
+    private boolean disponivel;
 
     public Livro(String titulo, String autor, int ano) {
         this.titulo = titulo;
         this.autor = autor;
         this.ano = ano;
         this.disponivel = true;
+    }
+
+    public Livro(int id, String titulo,
+                    String autor, int ano) {
+
+        this.id = id;
+        this.titulo = titulo;
+        this.autor = autor;
+        this.ano = ano;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitulo() {

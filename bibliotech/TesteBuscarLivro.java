@@ -5,35 +5,36 @@ public class TesteBuscarLivro {
     public static void main(String[] args) {
 
         Scanner entrada = new Scanner(System.in);
+
         LivroDAO dao = new LivroDAO();
 
-        System.out.println("=== BUSCAR LIVRO ===");
+        System.out.println(
+                "=== BUSCAR LIVRO ===");
 
-        int id = -1;
+        System.out.print(
+                "Informe o ID do livro: ");
 
-        while (id != 0) {
+        int id = entrada.nextInt();
 
-            System.out.print(
-                    "\nInforme o ID (0 para sair): ");
+        Livro livro = dao.buscarLivroPorId(id);
 
-            id = entrada.nextInt();
+        if (livro != null) {
 
-            if (id == 0) {
-                break;
-            }
+            System.out.println(
+                    "Livro encontrado:");
 
-            String livro = dao.buscarLivroPorId(id);
+            System.out.println(
+                    livro.getId() + " - " +
+                            livro.getTitulo() + " - " +
+                            livro.getAutor() + " (" +
+                            livro.getAno() + ")");
 
-            if (livro != null) {
-                System.out.println("Livro encontrado:");
-                System.out.println(livro);
-            } else {
-                System.out.println(
-                        "Livro não encontrado.");
-            }
+        } else {
+
+            System.out.println(
+                    "Livro não encontrado.");
         }
 
-        System.out.println("Programa encerrado.");
         entrada.close();
     }
 }

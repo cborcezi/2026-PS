@@ -2,7 +2,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -134,49 +133,83 @@ public class LivroDAO {
 
     public Livro buscarLivroPorId(int id) {
 
-    String sql =
-        "SELECT id, titulo, autor, ano " +
-        "FROM livros WHERE id = ?";
+        String sql = "SELECT id, titulo, autor, ano " +
+                "FROM livros WHERE id = ?";
 
-    try (Connection conexao = Conexao.conectar();
-         PreparedStatement comando =
-             conexao.prepareStatement(sql)) {
+        try (Connection conexao = Conexao.conectar();
+                PreparedStatement comando = conexao.prepareStatement(sql)) {
 
-        comando.setInt(1, id);
+            comando.setInt(1, id);
 
-        try (ResultSet resultado =
-                 comando.executeQuery()) {
+            try (ResultSet resultado = comando.executeQuery()) {
 
-            if (resultado.next()) {
+                if (resultado.next()) {
 
-                int codigo =
-                    resultado.getInt("id");
+                    int codigo = resultado.getInt("id");
 
-                String titulo =
-                    resultado.getString("titulo");
+                    String titulo = resultado.getString("titulo");
 
-                String autor =
-                    resultado.getString("autor");
+                    String autor = resultado.getString("autor");
 
-                int ano =
-                    resultado.getInt("ano");
+                    int ano = resultado.getInt("ano");
 
-                return new Livro(
-                    codigo,
-                    titulo,
-                    autor,
-                    ano
-                );
+                    return new Livro(
+                            codigo,
+                            titulo,
+                            autor,
+                            ano);
+                }
             }
+
+        } catch (SQLException e) {
+
+            System.out.println(
+                    "Erro ao buscar livro: " +
+                            e.getMessage());
+        }
+        return null;
+    }
+
+    public List<Livro> buscarLivrosPorTitulo(
+            String titulo) {
+
+        List<Livro> livros = new ArrayList<>();
+
+        String sql = "SELECT id, titulo, autor, ano " +
+                "FROM livros " +
+                "WHERE titulo LIKE ? " +
+                "ORDER BY titulo";
+
+        try (
+                Connection conexao = Conexao.conectar();
+
+                PreparedStatement comando = conexao.prepareStatement(sql)) {
+
+            comando.setString(
+                    1, "%" + titulo + "%");
+
+            try (
+                    ResultSet resultado = comando.executeQuery()) {
+
+                while (resultado.next()) {
+
+                    Livro livro = new Livro(
+                            resultado.getInt("id"),
+                            resultado.getString("titulo"),
+                            resultado.getString("autor"),
+                            resultado.getInt("ano"));
+
+                    livros.add(livro);
+                }
+            }
+
+        } catch (SQLException e) {
+
+            System.out.println(
+                    "Erro ao buscar livros: " +
+                            e.getMessage());
         }
 
-    } catch (SQLException e) {
-
-        System.out.println(
-            "Erro ao buscar livro: " +
-            e.getMessage()
-        );
+        return livros;
     }
-    return null;
-} 
 }

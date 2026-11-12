@@ -24,10 +24,11 @@ public class TesteBuscarLivro {
                     "Livro encontrado:");
 
             System.out.println(
-                    livro.getId() + " - " +
-                            livro.getTitulo() + " - " +
-                            livro.getAutor() + " (" +
-                            livro.getAno() + ")");
+                livro.getId() + " - " +
+                livro.getTitulo() + " - " +
+                livro.getAutor() + " (" +
+                livro.getAno() + ")"
+                );
 
         } else {
 

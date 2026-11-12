@@ -95,7 +95,7 @@ public class LivroDAO {
 
         List<Livro> livros = new ArrayList<>();
 
-        String sql = "SELECT id, titulo, autor, ano " +
+        String sql = "SELECT id, titulo, autor, ano, capa " +
                 "FROM livros ORDER BY titulo";
 
         try (Connection conexao = Conexao.conectar();
@@ -133,7 +133,7 @@ public class LivroDAO {
 
     public Livro buscarLivroPorId(int id) {
 
-        String sql = "SELECT id, titulo, autor, ano " +
+        String sql = "SELECT id, titulo, autor, ano, capa " +
                 "FROM livros WHERE id = ?";
 
         try (Connection conexao = Conexao.conectar();
@@ -175,7 +175,7 @@ public class LivroDAO {
 
         List<Livro> livros = new ArrayList<>();
 
-        String sql = "SELECT id, titulo, autor, ano " +
+        String sql = "SELECT id, titulo, autor, ano, capa " +
                 "FROM livros " +
                 "WHERE titulo LIKE ? " +
                 "ORDER BY titulo";
@@ -199,6 +199,8 @@ public class LivroDAO {
                             resultado.getString("autor"),
                             resultado.getInt("ano"));
 
+                    livro.setCapa(resultado.getString("capa"));
+
                     livros.add(livro);
                 }
             }
@@ -211,5 +213,29 @@ public class LivroDAO {
         }
 
         return livros;
+    }
+
+    public boolean atualizarCapa(
+            int id, String caminho) {
+
+        String sql = "UPDATE livros SET capa = ? WHERE id = ?";
+
+        try (
+                Connection conexao = Conexao.conectar();
+                PreparedStatement comando = conexao.prepareStatement(sql)) {
+
+            comando.setString(1, caminho);
+            comando.setInt(2, id);
+
+            return comando.executeUpdate() > 0;
+
+        } catch (SQLException e) {
+
+            System.out.println(
+                    "Erro ao atualizar capa: " +
+                            e.getMessage());
+
+            return false;
+        }
     }
 }

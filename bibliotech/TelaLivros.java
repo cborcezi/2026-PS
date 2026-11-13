@@ -3,6 +3,9 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.DefaultTableCellRenderer;
 import java.awt.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 public class TelaLivros extends JFrame {
@@ -57,9 +60,9 @@ public class TelaLivros extends JFrame {
                                 new Object[] {
                                                 "ID", "Capa", "Título", "Autor", "Ano"
                                 }, 0) {
-
                         @Override
-                        public boolean isCellEditable(int linha, int coluna) {
+                        public boolean isCellEditable(
+                                        int linha, int coluna) {
                                 return false;
                         }
                 };
@@ -67,7 +70,7 @@ public class TelaLivros extends JFrame {
                 // Configuração da tabela
                 tabela = new JTable(modelo);
 
-                tabela.setRowHeight(95);
+                tabela.setRowHeight(85);
                 tabela.setFont(fonteTabela);
                 tabela.setBackground(grafite);
                 tabela.setForeground(new Color(245, 245, 245));
@@ -84,7 +87,50 @@ public class TelaLivros extends JFrame {
 
                 // Largura das colunas
                 tabela.getColumnModel().getColumn(0).setPreferredWidth(25);
-                tabela.getColumnModel().getColumn(1).setPreferredWidth(100);
+                tabela.getColumnModel().getColumn(1).setPreferredWidth(90);
+
+                // Renderizador personalizado da coluna Capa
+                tabela.getColumnModel().getColumn(1).setCellRenderer(
+                                new DefaultTableCellRenderer() {
+
+                                        @Override
+                                        public Component getTableCellRendererComponent(
+                                                        JTable tabela,
+                                                        Object valor,
+                                                        boolean selecionada,
+                                                        boolean foco,
+                                                        int linha,
+                                                        int coluna) {
+
+                                                JLabel label = new JLabel();
+
+                                                label.setHorizontalAlignment(
+                                                                JLabel.CENTER);
+
+                                                label.setVerticalAlignment(
+                                                                JLabel.CENTER);
+
+                                                label.setOpaque(true);
+
+                                                label.setBackground(
+                                                                selecionada
+                                                                                ? tabela.getSelectionBackground()
+                                                                                : tabela.getBackground());
+
+                                                label.setForeground(branco);
+
+                                                if (valor instanceof ImageIcon) {
+                                                        label.setIcon((ImageIcon) valor);
+                                                        label.setText("");
+                                                } else {
+                                                        label.setIcon(null);
+                                                        label.setText("Sem capa");
+                                                }
+
+                                                return label;
+                                        }
+                                });
+
                 tabela.getColumnModel().getColumn(2).setPreferredWidth(250);
                 tabela.getColumnModel().getColumn(3).setPreferredWidth(250);
                 tabela.getColumnModel().getColumn(4).setPreferredWidth(30);
@@ -117,11 +163,15 @@ public class TelaLivros extends JFrame {
                         }
                 };
 
-                // Aplicar o renderizador em todas as colunas
+                // Aplicar o renderizador genérico em todas as colunas,
+                // exceto na coluna Capa
                 for (int i = 0; i < tabela.getColumnCount(); i++) {
-                        tabela.getColumnModel()
-                                        .getColumn(i)
-                                        .setCellRenderer(renderizador);
+
+                        if (i != 1) {
+                                tabela.getColumnModel()
+                                                .getColumn(i)
+                                                .setCellRenderer(renderizador);
+                        }
                 }
 
                 // Painel superior
@@ -158,7 +208,8 @@ public class TelaLivros extends JFrame {
                                 buscar,
                                 mostrarTodos,
                                 botaoConsultar,
-                                botaoBuscarTitulo
+                                botaoBuscarTitulo,
+                                botaoCapa
                 };
 
                 for (JButton botao : botoes) {
@@ -277,7 +328,8 @@ public class TelaLivros extends JFrame {
                                 e -> buscarLivro());
 
                 botaoConsultar.addActionListener(e -> {
-                        new TelaLivros().setVisible(true);});
+                        new TelaLivros().setVisible(true);
+                });
 
                 botaoBuscarTitulo.addActionListener(
                                 e -> buscarPorTitulo());
@@ -312,7 +364,7 @@ public class TelaLivros extends JFrame {
 
                 modelo.addRow(new Object[] {
                                 livro.getId(),
-                                "Sem capa cadastrada",
+                                carregarMiniatura(livro.getCapa()),
                                 livro.getTitulo(),
                                 livro.getAutor(),
                                 livro.getAno()
@@ -424,6 +476,9 @@ public class TelaLivros extends JFrame {
                 seletor.setDialogTitle(
                                 "Selecione a capa do livro");
 
+                // seletor.setCurrentDirectory(new
+                // java.io.File(System.getProperty("/workspaces/2026-PS/bibliotech/imagens")));
+
                 seletor.setFileFilter(
                                 new javax.swing.filechooser.FileNameExtensionFilter(
                                                 "Imagens JPG e PNG", "jpg", "jpeg", "png"));
@@ -482,5 +537,36 @@ public class TelaLivros extends JFrame {
                 SwingUtilities.invokeLater(() -> {
                         new TelaLivros().setVisible(true);
                 });
+        }
+
+        private ImageIcon carregarMiniatura(
+                        String caminho) {
+
+                if (caminho == null || caminho.isBlank()) {
+                        return null;
+                }
+
+                java.io.File arquivo = new java.io.File(caminho);
+
+                if (!arquivo.isFile()) {
+                        return null;
+                }
+
+                try {
+
+                        java.awt.image.BufferedImage imagem = javax.imageio.ImageIO.read(arquivo);
+
+                        if (imagem == null) {
+                                return null;
+                        }
+
+                        Image reduzida = imagem.getScaledInstance(
+                                        55, 75, Image.SCALE_SMOOTH);
+
+                        return new ImageIcon(reduzida);
+
+                } catch (java.io.IOException e) {
+                        return null;
+                }
         }
 }

@@ -1,3 +1,4 @@
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -118,6 +119,8 @@ public class LivroDAO {
                         autor,
                         ano);
 
+                livro.setCapa(resultado.getString("capa"));
+
                 livros.add(livro);
             }
 
@@ -153,11 +156,15 @@ public class LivroDAO {
 
                     int ano = resultado.getInt("ano");
 
-                    return new Livro(
+                    Livro livro = new Livro(
                             codigo,
                             titulo,
                             autor,
                             ano);
+
+                    livro.setCapa(resultado.getString("capa"));
+
+                    return livro;
                 }
             }
 
